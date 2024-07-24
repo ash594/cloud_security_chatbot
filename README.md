@@ -3,7 +3,8 @@
 This project is a chat interface designed for cloud security applications. It allows users to query cloud security issues and receive responses. It also enables the users to analyse their cloud misconfigurations and provides them with appropriate remediation steps.
 ## Installation
 1. **Clone the repository**
-2. **Run the backend/app.py and frontend/app.py on separate terminals using the command: python app.py**
+2. **The app uses GroqAPI. So create a .env file (in the backend folder) with the API key in it.**
+3. **Run the backend/app.py and frontend/app.py on separate terminals using the command: python app.py**
 ## Usage
 1. **Open the application** in your web browser.
 2. **Interact with the chat interface**:
