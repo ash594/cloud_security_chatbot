@@ -1,0 +1,302 @@
+[
+    {
+      "id": "1",
+      "description": "S3 bucket is publicly accessible",
+      "impact": "Sensitive data exposure",
+      "recommendation": "Ensure that the S3 bucket is not publicly accessible by setting the appropriate bucket policies and ACLs."
+    },
+    {
+      "id": "2",
+      "description": "IAM user has administrative privileges",
+      "impact": "Potential for accidental or malicious actions",
+      "recommendation": "Follow the principle of least privilege and remove unnecessary administrative privileges from IAM users."
+    },
+    {
+      "id": "3",
+      "description": "Security group allows inbound SSH from any IP address",
+      "impact": "Increased risk of brute-force attacks",
+      "recommendation": "Restrict SSH access to specific IP addresses or ranges."
+    },
+    {
+      "id": "4",
+      "description": "Unencrypted EBS volumes",
+      "impact": "Data at rest is not protected",
+      "recommendation": "Enable encryption for EBS volumes to protect data at rest."
+    },
+    {
+      "id": "5",
+      "description": "RDS instance is publicly accessible",
+      "impact": "Database exposure to the internet",
+      "recommendation": "Disable public accessibility for RDS instances and use VPC security groups to control access."
+    },
+    {
+      "id": "6",
+      "description": "CloudTrail is not enabled in all regions",
+      "impact": "Incomplete logging and monitoring",
+      "recommendation": "Enable CloudTrail in all regions to ensure comprehensive logging and monitoring."
+    },
+    {
+      "id": "7",
+      "description": "Unused IAM users and roles",
+      "impact": "Increased attack surface",
+      "recommendation": "Regularly audit and remove unused IAM users and roles."
+    },
+    {
+      "id": "8",
+      "description": "No MFA enabled for IAM users",
+      "impact": "Increased risk of compromised accounts",
+      "recommendation": "Enable multi-factor authentication (MFA) for all IAM users."
+    },
+    {
+      "id": "9",
+      "description": "ECS task roles have overly permissive policies",
+      "impact": "Potential for privilege escalation",
+      "recommendation": "Restrict ECS task role policies to the minimum necessary permissions."
+    },
+    {
+      "id": "10",
+      "description": "VPC flow logs are not enabled",
+      "impact": "Lack of visibility into network traffic",
+      "recommendation": "Enable VPC flow logs to monitor network traffic and detect suspicious activity."
+    },
+    {
+      "id": "11",
+      "description": "EC2 instances lack key pairs",
+      "impact": "Instances cannot be accessed securely",
+      "recommendation": "Ensure that all EC2 instances have associated key pairs for secure SSH access."
+    },
+    {
+      "id": "12",
+      "description": "S3 bucket versioning is not enabled",
+      "impact": "Inability to recover from accidental deletions or overwrites",
+      "recommendation": "Enable versioning on S3 buckets to preserve, retrieve, and restore every version of every object stored."
+    },
+    {
+      "id": "13",
+      "description": "IAM password policy is weak",
+      "impact": "Increased risk of compromised accounts due to weak passwords",
+      "recommendation": "Set a strong password policy for IAM users, including minimum length and complexity requirements."
+    },
+    {
+      "id": "14",
+      "description": "No lifecycle policies for S3 buckets",
+      "impact": "Unnecessary data storage costs",
+      "recommendation": "Implement lifecycle policies to transition or expire objects based on your data retention requirements."
+    },
+    {
+      "id": "15",
+      "description": "Exposed Lambda environment variables",
+      "impact": "Sensitive information leakage",
+      "recommendation": "Avoid hardcoding sensitive information in Lambda environment variables and use AWS Secrets Manager or Parameter Store instead."
+    },
+    {
+      "id": "16",
+      "description": "Elastic Load Balancer (ELB) with HTTP instead of HTTPS",
+      "impact": "Unencrypted traffic between clients and load balancer",
+      "recommendation": "Configure ELBs to use HTTPS to ensure encrypted communication."
+    },
+    {
+      "id": "17",
+      "description": "IAM roles with overly permissive trust policies",
+      "impact": "Potential for unauthorized role assumption",
+      "recommendation": "Restrict trust policies to allow only necessary entities to assume roles."
+    },
+    {
+      "id": "18",
+      "description": "Unused security groups",
+      "impact": "Increased attack surface due to unmanaged resources",
+      "recommendation": "Regularly review and delete unused security groups."
+    },
+    {
+      "id": "19",
+      "description": "Publicly accessible Elasticsearch domain",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Restrict access to Elasticsearch domains using VPCs and IAM policies."
+    },
+    {
+      "id": "20",
+      "description": "No log retention policy for CloudWatch Logs",
+      "impact": "Uncontrolled growth of log data",
+      "recommendation": "Set retention policies for CloudWatch Logs to manage log data lifecycle."
+    },
+    {
+      "id": "21",
+      "description": "RDS database encryption is not enabled",
+      "impact": "Data at rest is not encrypted",
+      "recommendation": "Enable encryption for RDS databases to protect data at rest."
+    },
+    {
+      "id": "22",
+      "description": "IAM access keys are not rotated regularly",
+      "impact": "Increased risk of compromised access keys",
+      "recommendation": "Rotate IAM access keys regularly and deactivate old keys."
+    },
+    {
+      "id": "23",
+      "description": "Publicly accessible Redshift cluster",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Disable public accessibility for Redshift clusters and use VPC security groups to control access."
+    },
+    {
+      "id": "24",
+      "description": "Unrestricted outbound traffic in security groups",
+      "impact": "Increased risk of data exfiltration and communication with malicious entities",
+      "recommendation": "Restrict outbound traffic in security groups to necessary destinations."
+    },
+    {
+      "id": "25",
+      "description": "Direct access to RDS instance without using a bastion host",
+      "impact": "Increased risk of unauthorized access",
+      "recommendation": "Use a bastion host to provide secure access to RDS instances."
+    },
+    {
+      "id": "26",
+      "description": "CloudFront distributions using default SSL certificates",
+      "impact": "Increased risk of SSL/TLS vulnerabilities",
+      "recommendation": "Use custom SSL certificates for CloudFront distributions."
+    },
+    {
+      "id": "27",
+      "description": "Lack of backup for critical resources",
+      "impact": "Data loss and recovery challenges",
+      "recommendation": "Implement regular backups for critical resources such as RDS, EBS, and S3."
+    },
+    {
+      "id": "28",
+      "description": "Open MongoDB or Redis instances",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Restrict access to MongoDB and Redis instances using security groups and VPCs."
+    },
+    {
+      "id": "29",
+      "description": "IAM users using root account for daily operations",
+      "impact": "Increased risk of security breaches",
+      "recommendation": "Use IAM roles and users for daily operations and limit root account usage."
+    },
+    {
+      "id": "30",
+      "description": "Exposed API Gateway endpoints",
+      "impact": "Unauthorized access to APIs",
+      "recommendation": "Implement API Gateway authorization mechanisms such as IAM, Cognito, or Lambda authorizers."
+    },
+    {
+      "id": "31",
+      "description": "S3 buckets without logging enabled",
+      "impact": "Lack of visibility into bucket access and actions",
+      "recommendation": "Enable logging for S3 buckets to track access and actions."
+    },
+    {
+      "id": "32",
+      "description": "No network ACLs on VPC subnets",
+      "impact": "Lack of additional layer of network security",
+      "recommendation": "Implement network ACLs on VPC subnets to control inbound and outbound traffic."
+    },
+    {
+      "id": "33",
+      "description": "EC2 instances with default security group",
+      "impact": "Potential for overly permissive access",
+      "recommendation": "Use custom security groups with least privilege rules for EC2 instances."
+    },
+    {
+      "id": "34",
+      "description": "Open Elasticsearch instances",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Restrict access to Elasticsearch instances using VPCs and IAM policies."
+    },
+    {
+      "id": "35",
+      "description": "IAM policies attached directly to users",
+      "impact": "Difficult to manage and audit permissions",
+      "recommendation": "Attach IAM policies to groups or roles instead of directly to users."
+    },
+    {
+      "id": "36",
+      "description": "Unused Elastic IP addresses",
+      "impact": "Unnecessary costs and potential attack surface",
+      "recommendation": "Release unused Elastic IP addresses to avoid unnecessary costs and reduce attack surface."
+    },
+    {
+      "id": "37",
+      "description": "Elastic Beanstalk environments with public access",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Restrict public access to Elastic Beanstalk environments and use VPC security groups."
+    },
+    {
+      "id": "38",
+      "description": "No resource tagging policy",
+      "impact": "Difficulty in managing and tracking resources",
+      "recommendation": "Implement a tagging policy to manage and track AWS resources effectively."
+    },
+    {
+      "id": "39",
+      "description": "IAM roles with full access to all services",
+      "impact": "Potential for misuse and increased attack surface",
+      "recommendation": "Follow the principle of least privilege and restrict IAM role permissions to necessary services."
+    },
+    {
+      "id": "40",
+      "description": "No automated response to security events",
+      "impact": "Delayed response to security incidents",
+      "recommendation": "Implement automated responses to security events using AWS Config, CloudWatch, and Lambda."
+    },
+    {
+      "id": "41",
+      "description": "Open RDP access to EC2 instances",
+      "impact": "Increased risk of brute-force attacks",
+      "recommendation": "Restrict RDP access to specific IP addresses or ranges."
+    },
+    {
+      "id": "42",
+      "description": "SNS topics with public access",
+      "impact": "Potential for unauthorized message publication and subscription",
+      "recommendation": "Restrict access to SNS topics using IAM policies."
+    },
+    {
+      "id": "43",
+      "description": "CloudFormation stack permissions are too permissive",
+      "impact": "Potential for unintended resource modifications",
+      "recommendation": "Limit CloudFormation stack permissions to necessary actions only."
+    },
+    {
+      "id": "44",
+      "description": "Open Kafka broker instances",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Restrict access to Kafka broker instances using VPCs and IAM policies."
+    },
+    {
+      "id": "45",
+      "description": "No security controls for serverless applications",
+      "impact": "Potential for security vulnerabilities",
+      "recommendation": "Implement security controls for serverless applications, including IAM policies and VPC configurations."
+    },
+    {
+      "id": "46",
+      "description": "Lambda functions with excessive execution permissions",
+      "impact": "Potential for privilege escalation",
+      "recommendation": "Follow the principle of least privilege and restrict Lambda function permissions to necessary actions."
+    },
+    {
+      "id": "47",
+      "description": "EFS file systems without encryption",
+      "impact": "Data at rest is not protected",
+      "recommendation": "Enable encryption for EFS file systems to protect data at rest."
+    },
+    {
+      "id": "48",
+      "description": "Open RabbitMQ instances",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Restrict access to RabbitMQ instances using VPCs and IAM policies."
+    },
+    {
+      "id": "49",
+      "description": "IAM users with programmatic access keys not in use",
+      "impact": "Increased risk of security breaches",
+      "recommendation": "Regularly audit and remove unused IAM access keys."
+    },
+    {
+      "id": "50",
+      "description": "S3 bucket policies allowing anonymous access",
+      "impact": "Potential data exposure and unauthorized access",
+      "recommendation": "Review and update S3 bucket policies to restrict anonymous access."
+    }
+  ]
